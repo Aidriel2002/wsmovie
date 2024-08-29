@@ -90,7 +90,7 @@ nav.scrolled {
   cursor: pointer;
   padding: 11px;
   border-radius: 0 7px 7px 0;
-  border-left: 2px solid white;
+  border-left: 1px solid white;
   margin-right: 70px;
 }
 .Ssbttn:hover {
@@ -247,8 +247,12 @@ nav a:hover {
 }
 
 .carousel-arrow {
-  background-color: #333;
-  color: white;
+  background-color: #fcfcfc;
+  color: rgb(41, 41, 41);
+  font-weight: bold;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -257,6 +261,11 @@ nav a:hover {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+  border: none;
+}
+.carousel-arrow:hover {
+  background-color: #8f8f8f;
+  color: #000;
 }
 
 .carousel-arrow.left {
@@ -343,89 +352,4 @@ footer p{
 }
 footer p span {
   color: red;
-}
-
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.burger-menu div {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links.hidden {
-  display: none;
-}
-
-.nav-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links ul li {
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links ul li a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: 10px;
-}
-
-/* Burger menu active styles */
-.burger-menu.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger-menu.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  width: 200px;
-  z-index: 1000;
-}
-
-/* Media Query for screen widths 1098px and below */
-@media (max-width: 1098px) {
-  .nav-right {
-    display: none;
-  }
-
-  .burger-menu {
-    display: flex;
-  }
-
-  .srchbar {
-    margin-left: auto;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
 }

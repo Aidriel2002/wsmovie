@@ -21,7 +21,6 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isHomeVisible, setIsHomeVisible] = useState(true);
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
   const popularCarouselRef = useRef(null);
   const topRatedCarouselRef = useRef(null);
@@ -129,7 +128,6 @@ const App = () => {
     }
   };
 
-  const toggleBurgerMenu = () => setIsBurgerMenuOpen(!isBurgerMenuOpen);
   const handleMoreInfo = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
   const toggleMute = () => setIsMuted(!isMuted);
@@ -210,21 +208,14 @@ const App = () => {
   return (
     <>
       <nav className={isNavScrolled ? "scrolled" : ""}>
-        <div className="burger-menu" onClick={toggleBurgerMenu}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div className={`nav-links ${isBurgerMenuOpen ? "active" : ""}`}>
-          <div className="nav-right">
-            <h3>
-              <span>D'</span>movies
-            </h3>
-            <a href="#Home">Home</a>
-            <a href="#List">New & Popular</a>
-            <a href="#Movie">Top Rated Movies</a>
-            <a href="#Series">TV Shows</a>
-          </div>
+        <div className="nav-right">
+          <h3>
+            <span>D'</span>movies
+          </h3>
+          <a href="#Home">Home</a>
+          <a href="#List">New & Popular</a>
+          <a href="#Movie">Top Rated Movies</a>
+          <a href="#Series">TV Shows</a>
         </div>
         <div className="srchbar">
           <input
