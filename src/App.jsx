@@ -21,11 +21,36 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isHomeVisible, setIsHomeVisible] = useState(true);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const popularCarouselRef = useRef(null);
   const topRatedCarouselRef = useRef(null);
   const tvCarouselRef = useRef(null);
   const searchResultsCarouselRef = useRef(null);
+  const burgerMenuRef = useRef(null);
+
+  const handleBurgerClick = () => {
+    console.log("Burger menu clicked");
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        burgerMenuRef.current &&
+        !burgerMenuRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -212,10 +237,28 @@ const App = () => {
           <h3>
             <span>D'</span>movies
           </h3>
-          <a href="#Home">Home</a>
-          <a href="#List">New & Popular</a>
-          <a href="#Movie">Top Rated Movies</a>
-          <a href="#Series">TV Shows</a>
+          <div className="burger-menu" ref={burgerMenuRef}>
+            <button className="burger-icon" onClick={handleBurgerClick}>
+              ☰
+            </button>
+            <div className={`burger-menu-items ${isMenuOpen ? "open" : ""}`}>
+              <button className="close-menu" onClick={handleBurgerClick}>
+                ×
+              </button>
+              <a href="#Home" onClick={closeMenu}>
+                Home
+              </a>
+              <a href="#List" onClick={closeMenu}>
+                New & Popular
+              </a>
+              <a href="#Movie" onClick={closeMenu}>
+                Top Rated Movies
+              </a>
+              <a href="#Series" onClick={closeMenu}>
+                TV Shows
+              </a>
+            </div>
+          </div>
         </div>
         <div className="srchbar">
           <input

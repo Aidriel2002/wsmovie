@@ -353,3 +353,176 @@ footer p{
 footer p span {
   color: red;
 }
+
+
+/* KAPOYAAAA ANING BORGER MENU OYYYYYYY */
+
+
+
+.burger-icon {
+  display: none; 
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.burger-menu-items {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(10, 10, 10);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.burger-menu-items.open {
+  display: flex;
+}
+
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white; 
+}
+
+
+
+@media (max-width: 1098px) {
+  
+  .nav-right h3 {
+    display: none;
+  }
+  
+  .burger-icon {
+    display: block; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .burger-menu {
+    display: block;
+  }
+  
+  .burger-menu-items {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 0; 
+    z-index: 1000;
+    width: 200px;
+    height: 100vh; 
+  }
+  
+  .burger-menu-items.open {
+    display: flex; 
+  }
+
+  .burger-menu-items a {
+    color: white;
+    margin: 0;
+    margin-top: 100px;
+    padding: 20px;
+    text-decoration: none; 
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white; 
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 929px) {
+  .content{
+    margin-top: 50%;
+  }
+} 
+
+@media (max-width: 807px) {
+  .content{
+    margin-top: 50%;
+  }
+  .content h1 {
+    font-size: 35px;
+    width: 300px;
+  }
+  .content h2 {
+    font-size: 24px;
+  }
+  .content p {
+    font-size: 13px;
+    width: 400px;
+  }
+} 
+
+@media (max-width: 729px) {
+  .content{
+    margin-top: 50%;
+  }
+} 
+
+@media (max-width: 585px) {
+  .content{
+    margin-top: 70%;
+    margin-left: 20px;
+  }
+  .content h1 {
+    font-size: 25px;
+    width: 250px;
+  }
+  .content h2 {
+    font-size: 16px;
+  }
+  .content p {
+    font-size: 12px;
+    width: 250px;
+  }
+  .pbuttn {
+    font-size: 13px ;
+  }
+  .more-info-button {
+    font-size: 13px;
+  }
+  .Ssbttn {
+    margin-right: 50px;
+  }
+} 
+@media (max-width: 450px) {
+  .content {
+    margin-top: 90%;
+    margin-left: 20px;
+  }
+  .Ssbttn {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 383px) {
+  .content {
+    margin-top: 95%;
+    margin-left: 10px;
+  }
+  .Ssbttn {
+    margin-right: 10px;
+  }
+}
